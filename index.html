@@ -6,6 +6,34 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
+Author 1
+Author 2
+ 
+Further Information:
+http://diystream.cns.utexas.edu/
+
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+blah, blah, blah,
+ 
+Known Issues:
+blah, blah, blah, blah
+-->
+
+   <head> 
+      
+	  <!DOCTYPE html> 
+<html> 
+<img src="https://www.ororecovery.com/stressed-out-what-is-stress-vs-anxiety-symptoms/" alt="Stress or Anxiety?">
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
 Tim Riedel
 Author 2
  
@@ -36,29 +64,29 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-        var allergy_count = 0;
-	<!--A variable is created to record the total number of answers that correspond with an allergy. The variable amount is initially set to 0.-->
-        var cold_count = 0;
-	<!--A variable is created to record the total number of answers that correspond with a cold. The variable amount is initially set to 0.-->/
+        var anxiety_count = 0; 
+	<!--A variable is created to record the total number of answers that correspond with an anxiety. The variable amount is initially set to 0.-->
+        var stress_count = 0; 
+	<!--A variable is created to record the total number of answers that correspond with a stress. The variable amount is initially set to 0.-->/
 
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
-	    <!--The function titled "allergyAdd" is responsible for adding 1 point to the allergy count (allergy_count) when the user chooses an answer that corresponds with an allergy instead of a cold.-->
+        function anxietyAdd(){
+           anxiety_count = anxiety_count + 1; 
+		<!--The function titled "anxietyAdd" is responsible for adding 1 point to the anxiety count (anxiety_count) when the user chooses an answer that corresponds with an anxiety instead of a stress.-->
 	
 
         }
 
-        function coldAdd(){
-            cold_count = cold_count + 1;
-	    <!--The function titled "allergyAdd" s responsible for adding 1 point to the allergy count (allergy_count) when the user chooses an answer that corresponds with an allergy instead of a cold.-->
+        function stressAdd(){
+            stress_count = stress_count + 1; 
+		<!--The function titled "anxietyAdd" s responsible for adding 1 point to the anxiety count (anxiety_count) when the user chooses an answer that corresponds with an anxiety instead of a stress.-->
 
         }
 
 	function results(){
-		var total = allergy_count + cold_count; 
-		<!--A variable is created to total the amount of points accumulated in the allergy and cold count.-->
-		alert("Probability it is allergies =" + (allergy_count / total)* 100 + " Probability it is a cold =" + (cold_count / total)* 100); 
-		<!--An allert will come up on the screen to display the results of the survey to the user. Specifically, it will display the allergy percentage and the cold percentage in order to indicate whether or not the user is likely to hve an allergy or cold. The allergy percentage is found by taking the allergy count and dividing it by the variable "total," then multiplying the result by 100. The cold percentage is found by taking the cold count and dividing it by teh variable "total," then multiplying the result by 100.-->
+		var total = anxiety_count + stress_count; 
+		<!--A variable is created to total the amount of points accumulated in the anxiety and stress count.-->
+		alert("Probability it is allergies =" + (anxiety_count / total)* 100 + " Probability it is a stress =" + (stress_count / total)* 100); 
+		<!--An allert will come up on the screen to display the results of the survey to the user. Specifically, it will display the anxiety percentage and the stress percentage in order to indicate whether or not the user is likely to hve an anxiety or stress. The anxiety percentage is found by taking the anxiety count and dividing it by the variable "total," then multiplying the result by 100. The stress percentage is found by taking the stress count and dividing it by the variable "total," then multiplying the result by 100.-->
 
 	}
 		
@@ -92,20 +120,20 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
-	<!--The title of the page is 'Cold or Allergies-->
+	<h1>Stress or Allergies?</h1> 
+	<!--The title of the page is 'Stress or Allergies-->
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p> 
+	<p>Are you feeling like you might have a stress but wonder if it is allergies. Answer a few short questions to find out!</p>  
 	<!--This is an indicator of the website use. The question allows the users to understand what they will receive from using the website.-->
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
-	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p> 
-		<!--This is a disclaimer so no user uses the code as a medical diagnosis.-->
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>  
+	<!--This is a disclaimer so no user uses the code as a medical diagnosis.-->
 
 <div class="page" id="one"> 
 	<!--The page is understood by the code as page one (the id is one)-->
@@ -115,12 +143,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?</p> 
+        <p>Is there a stressor currently affecting you?</p> 
 		<!--This is the first question and only question in the page.-->
-	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a> 
-		<!--This is the button users will choose to indicate they have watery and/or itchy eyes. Choosing this answer will increase the allergy count by one, and will have no effect on the cold count. The href statement will take the user to page two.-->
-	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a> 
-		<!--This is the button users will choose to indicate they do not have watery and/or itchy eyes. Choosing this answer will increase the cold count by one, and will have no effect on the allergy count. The href statement will take the user to page two.-->
+	<a href="#two"  onclick="anxietyAdd();" class="w3-btn w3-black"> No</a> 
+		<!--This is the button users will choose to indicate they don't have a stressor that is affecting them in the present (and has not passed). Choosing this answer will increase the anxiety count by one, and will have no effect on the stress count. The href statement will take the user to page two.-->
+	<a href="#two"  onclick="stressAdd();" class="w3-btn w3-black">TYes</a> 
+		<!--This is the button users will choose to indicate they have a stressor that is affecting them in the present (and has not passed). Choosing this answer will increase the stress count by one, and will have no effect on the anxiety count. The href statement will take the user to page two.-->
     	</div>
 </div>
 
@@ -133,17 +161,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-	<p>Do you have a fever?</p> 
+	<p>Is your response proportional to the stressor?</p> 
 		<!--This is the first question and only question in the page.-->
-	<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a> 
-		<!--This is the button users will choose to indicate they have a fever. Choosing this answer will increase the cold count by one, and will have no effect on the allergy count. The href statement will take the user to page three.-->
-	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a> 
-		<!--This is the button users will choose to indicate they have a fever. Choosing this answer will increase the allergy count by one, and will have no effect on the cold count. The href statement will take the user to page three.-->
+	<a href="#three"  onclick="stressAdd();" class="w3-btn w3-black"> Yes</a> 
+		<!--This is the button users will choose to indicate their stressor causes a proportionate response. Choosing this answer will increase the stress count by one, and will have no effect on the anxiety count. The href statement will take the user to page three.-->
+	<a href="#three"  onclick="anxietyAdd();" class="w3-btn w3-black"> No</a> 
+		<!--This is the button users will choose to indicate they have a disproportionate response to the stressor. Choosing this answer will increase the anxiety count by one, and will have no effect on the stress count. The href statement will take the user to page three.-->
 	</div>
 </div>	
 	
 <div class="page" id="three"> 
-		<!--The page is understood by the code as page three (the id is three)-->
+	<!--The page is understood by the code as page three (the id is three)-->
 	
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1> 
@@ -151,12 +179,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Do you have a sore throat?</p> 
+        <p>Are you reacting to external factors?</p> 
 		<!--This is the first question and only question in the page.-->
-	<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a> 
-		<!--his is the button users will choose to indicate they have a sore throat. Choosing this answer will increase the cold count by one, and will have no effect on the allergy count. The href statement will take the user to page four.-->
-	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a> 
-		<!--This is the button users will choose to indicate they have a sore throat. Choosing this answer will increase the allergy count by one, and will have no effect on the cold count. The href statement will take the user to page four.-->
+	<a href="#four"  onclick="stressAdd();" class="w3-btn w3-black"> Yes</a> 
+		<!--his is the button users will choose to indicate they are reacting to external, not internal factors. Choosing this answer will increase the stress count by one, and will have no effect on the anxiety count. The href statement will take the user to page four.-->
+	<a href="#four"  onclick="anxietyAdd();" class="w3-btn w3-black"> No</a> 
+		<!--This is the button users will choose to indicate they aren't reacting to external factors. Choosing this answer will increase the anxiety count by one, and will have no effect on the stress count. The href statement will take the user to page four.-->
     	</div>
 </div>
 
@@ -169,12 +197,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your symptoms seasonal or chronic?</p> .
+        <p>Do your symptoms typically persist after the stressor passes or is resolved?</p> 
 		<!--This is the first question and only question in the page.-->
-	<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a> 
-		<!--This is the button users will choose to indicate they have a seasonal or chronic sickness. Choosing this answer will increase the allergy count by one, and will have no effect on the cold count. The href statement will take the user to page five.-->
-	<a href="#five"  onclick="coldAdd();" class="w3-btn w3-black"> No</a> 
-		<!--This is the button users will choose to indicate they have a seasonal or chronic sickness. Choosing this answer will increase the cold count by one, and will have no effect on the allergy count. The href statement will take the user to page five.-->
+	<a href="#five"  onclick="anxietyAdd();" class="w3-btn w3-black"> Yes</a> 
+		<!--This is the button users will choose to indicate their symptoms persist even after the stressor is gone. Choosing this answer will increase the anxiety count by one, and will have no effect on the stress count. The href statement will take the user to page five.-->
+	<a href="#five"  onclick="stressAdd();" class="w3-btn w3-black"> No</a> 
+		<!--This is the button users will choose to indicate their symptoms don't persist after the stressor is gone. Choosing this answer will increase the stress count by one, and will have no effect on the anxiety count. The href statement will take the user to page five.-->
     	</div>
 </div>
 	
@@ -188,7 +216,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
     	<div id="content" class="w3-container">
 	<a onclick="results();" class="w3-btn w3-black"> Show Me My Results!</a> 
-		<!--This is a button that users will click to indicate that they wish to see their results. Doing so will call the results function, which will display an alert with their cold and allergy percentages-->
+		<!--This is a button that users will click to indicate that they wish to see their results. Doing so will call the results function, which will display an alert with their stress
+ 
+
+and anxiety percentages-->
     	</div>
 </div>
 
@@ -201,4 +232,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </footer>
 
 </body>
+</html>
+
+
+
+
+	   
+   </body>
 </html>

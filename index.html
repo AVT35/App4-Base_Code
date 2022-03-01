@@ -57,7 +57,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	calculate probabilities. The results will then be displayed with an alert*/
 	function results(){
 		var total = anxiety_count + stress_count;
-		alert("Probability it is allergies =" + (anxiety_count / total)* 100 + "<br> Probability it is a cold =" + (stress_count / total)* 100);
+		alert("Probability it is anxiety =" + (anxiety_count / total)* 100 + "<br> Probability it is stress =" + (stress_count / total)* 100);
 
 	}
 		
@@ -129,9 +129,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-	<p>Do you have a fever?</p>
+	<p>Is your response proportional to the stressor?</p>
+	<!--This is the second question and only question in the page.-->
 	<a href="#three"  onclick="stressAdd();" class="w3-btn w3-black"> Yes</a>
+	<!--This is the button users will choose to indicate their stressor causes a proportionate response. Choosing this answer will increase the stress count by one, 
+	and will have no effect on the anxiety count. The href statement will take the user to page three.-->
 	<a href="#three"  onclick="anxietyAdd();" class="w3-btn w3-black"> No</a>
+	<!--This is the button users will choose to indicate they have a disproportionate response to the stressor. Choosing this answer will increase the anxiety count 
+	by one, and will have no effect on the stress count. The href statement will take the user to page three.-->
 	</div>
 </div>	
 	
@@ -142,9 +147,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Do you have a sore throat?</p>   
+        <p>Are you reacting to external factors?</p>  
+	<!--This is the third question and only question in the page.-->
 	<a href="#four"  onclick="stressAdd();" class="w3-btn w3-black"> Yes</a>
+	<!--his is the button users will choose to indicate they are reacting to external, not internal factors. Choosing this answer will increase the stress count by one, 
+	and will have no effect on the anxiety count. The href statement will take the user to page four.-->
 	<a href="#four"  onclick="anxietyAdd();" class="w3-btn w3-black"> No</a>
+	<!--This is the button users will choose to indicate they aren't reacting to external factors. Choosing this answer will increase the anxiety count by one, 
+	and will have no effect on the stress count. The href statement will take the user to page four.-->
     	</div>
 </div>
 
@@ -155,16 +165,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your symptoms seasonal or chronic?</p>   
+        <p>Do your symptoms typically persist after the stressor passes or is resolved?</p>  
+	<!--This is the fourth question and only question in the page.-->
 	<a href="#five"  onclick="anxietyAdd();" class="w3-btn w3-black"> Yes</a>
+	<!--This is the button users will choose to indicate their symptoms persist even after the stressor is gone. Choosing this answer will increase the anxiety 
+	count by one, and will have no effect on the stress count. The href statement will take the user to page five.-->
 	<a href="#five"  onclick="stressAdd();" class="w3-btn w3-black"> No</a>
+	<!--This is the button users will choose to indicate their symptoms don't persist after the stressor is gone. Choosing this answer will increase the stress 
+	count by one, and will have no effect on the anxiety count. The href statement will take the user to page five.-->
     	</div>
 </div>
 
 <div class="page" id="five">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
-		<!--This is the title of the sixth page, the results-->
+		<!--The title of the page is 'Results 1.' This indicates to users that the page will display the results of the survey-->
 		
 	</div>
 	
@@ -172,6 +187,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p id="results"></p>
 	<p>Ready to see your results?!</p>   
 	<a onclick="results();" class="w3-btn w3-black"> Show Me My Results!</a>
+	<!--This is a button that users will click to indicate that they wish to see their results. Doing so will call the results function, which will display an alert 
+	with their stress-->
 	
 
 

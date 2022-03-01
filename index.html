@@ -37,27 +37,27 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
         //The allergy and cold counts are initially set to 0. Based on the user choice of answers, the counts will either increase by 1 or remain the same. 
-	var allergy_count = 0;
-        var cold_count = 0;
+	var anxiety_count = 0;
+        var stress_count = 0;
 
 
         //This is the function to increase the allergy count by 1. If the user chooses an answer indicating they may have an allergy, this will increase by 1. 
-	function allergyAdd(){
-            allergy_count = allergy_count + 1;
+	function anxietyAdd(){
+            anxiety_count = anxiety_count + 1;
 	
 
         }
 
         //This is the function to increase the cold count by 1. If the user chooses an answer indicating they may have an cold, this will increase by 1.
-	function coldAdd(){
-            cold_count = cold_count + 1;
+	function stressAdd(){
+            stress_count = stress_count + 1;
         }
 
 	/*This is the function to calculate results, which is done by adding allergy and cold counts to create a total, and using the percentage formula to 
 	calculate probabilities. The results will then be displayed with an alert*/
 	function results(){
-		var total = allergy_count + cold_count;
-		alert("Probability it is allergies =" + (allergy_count / total)* 100 + "<br> Probability it is a cold =" + (cold_count / total)* 100);
+		var total = anxiety_count + stress_count;
+		alert("Probability it is allergies =" + (anxiety_count / total)* 100 + "<br> Probability it is a cold =" + (stress_count / total)* 100);
 
 	}
 		
@@ -89,12 +89,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
+	<h1>Stress or Anxiety?</h1>
 	<!--This is the title of the first page-->
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>Are you feeling like you might be stressed or wondering if you just have anxiety? Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	<!--This codes for the button. The button is labelled Get Started, and clicking it will take the user to the page id one-->
@@ -111,8 +111,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
     	<div id="content" class="w3-container">
         <p>Are your eyes watery or itchy?</p>   
-	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+	<a href="#two"  onclick="anxietyAdd();" class="w3-btn w3-black"> Yes</a>
+	<a href="#two"  onclick="stressAdd();" class="w3-btn w3-black">No</a>
     	</div>
 </div>
 
@@ -124,8 +124,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 	<p>Do you have a fever?</p>
-	<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
-	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
+	<a href="#three"  onclick="stressAdd();" class="w3-btn w3-black"> Yes</a>
+	<a href="#three"  onclick="anxietyAdd();" class="w3-btn w3-black"> No</a>
 	</div>
 </div>	
 	
@@ -137,8 +137,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
     	<div id="content" class="w3-container">
         <p>Do you have a sore throat?</p>   
-	<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
-	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
+	<a href="#four"  onclick="stressAdd();" class="w3-btn w3-black"> Yes</a>
+	<a href="#four"  onclick="anxietyAdd();" class="w3-btn w3-black"> No</a>
     	</div>
 </div>
 
@@ -150,8 +150,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
     	<div id="content" class="w3-container">
         <p>Are your symptoms seasonal or chronic?</p>   
-	<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-	<a href="#five"  onclick="coldAdd();" class="w3-btn w3-black"> No</a>
+	<a href="#five"  onclick="anxietyAdd();" class="w3-btn w3-black"> Yes</a>
+	<a href="#five"  onclick="stressAdd();" class="w3-btn w3-black"> No</a>
     	</div>
 </div>
 

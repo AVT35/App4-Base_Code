@@ -6,23 +6,24 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-Anagha Tirumalai
+Tim Riedel
+Author 2
  
 Further Information:
-http://diystream.cns.utexas.edu/
-
+http://cns.utexas.edu/fri
+ 
 Research Educator:
 Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-The goal of the code is for the user to be able to document whether the symptoms he/she is experiencing is from stress or anxiety. Based on user responses, the code calculates the probability that the user symptoms are from stress or anxiety. 
+The goal of the code is for the user to be able to document whether the symptoms he/she is experiencing is a cold or an allergy. Based on user responses, the code calculates the probability that the user symptoms are that of a cold or an allergy. 
  
-Known Issues: 
-The buttons were difficult to code for. I had trouble getting the buttons to indicate the pages should change, and the code ended up being a list format for a while.
+Known Issues:
+The buttons were difficult to code for. I had trouble getting the buttons to indicate the pages should change, and the code ended up being a list format for a while. 
 
 https://www.w3schools.com/w3css/default.asp
-https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file 
+https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
    <head> 
@@ -34,36 +35,29 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
    </head> 
 
 
-
 <script>
-        var anxiety_count = 0; 
-	//A variable is created to record the total number of answers that correspond with an anxiety. The variable amount is initially set to 0.
-        var stress_count = 0; 
-	//A variable is created to record the total number of answers that correspond with a stress. The variable amount is initially set to 0.
+        //The allergy and cold counts are initially set to 0. Based on the user choice of answers, the counts will either increase by 1 or remain the same. 
+	var allergy_count = 0;
+        var cold_count = 0;
 
-        function anxietyAdd(){
-           anxiety_count = anxiety_count + 1; 
-		/*The function titled "anxietyAdd" is responsible for adding 1 point to the anxiety count (anxiety_count) when the user chooses an answer 
-		that corresponds with an anxiety instead of a stress.*/
+
+        //This is the function to increase the allergy count by 1. If the user chooses an answer indicating they may have an allergy, this will increase by 1. 
+	function allergyAdd(){
+            allergy_count = allergy_count + 1;
 	
 
         }
 
-        function stressAdd(){
-            stress_count = stress_count + 1; 
-		/*The function titled "anxietyAdd" s responsible for adding 1 point to the anxiety count (anxiety_count) when the user chooses an answer 
-		that corresponds with an anxiety instead of a stress.*/
-
+        //This is the function to increase the cold count by 1. If the user chooses an answer indicating they may have an cold, this will increase by 1.
+	function coldAdd(){
+            cold_count = cold_count + 1;
         }
 
+	/*This is the function to calculate results, which is done by adding allergy and cold counts to create a total, and using the percentage formula to 
+	calculate probabilities. The results will then be displayed with an alert*/
 	function results(){
-		var total = anxiety_count + stress_count; 
-		//A variable is created to total the amount of points accumulated in the anxiety and stress count.
-		alert("Probability it is allergies =" + (anxiety_count / total)* 100 + " Probability it is a stress =" + (stress_count / total)* 100); 
-		/*An allert will come up on the screen to display the results of the survey to the user. Specifically, it will display 
-		the anxiety percentage and the stress percentage in order to indicate whether or not the user is likely to hve an anxiety or stress. The anxiety percentage 
-		is found by taking the anxiety count and dividing it by the variable "total," then multiplying the result by 100. The stress percentage is found by 
-		taking the stress count and dividing it by the variable "total," then multiplying the result by 100.*/
+		var total = allergy_count + cold_count;
+		alert("Probability it is allergies =" + (allergy_count / total)* 100 + "<br> Probability it is a cold =" + (cold_count / total)* 100);
 
 	}
 		
@@ -77,10 +71,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 }
 
 .page {
-    width: 100vw; 
-	<!--This code indicates the width of the page-->
-    height: 100vh; 
-	<!--This line indicates the length of the page-->
+    width: 100vw;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: -100vw;
@@ -97,107 +89,83 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Stress or Anxiety?</h1>
+	<h1>Cold or Allergies?</h1>
+	<!--This is the title of the first page-->
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Want to know if you have stress or anxiety? Answer a few questions and find out!</p>
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> 
-	<!--This is an indicator of the website use. The question allows the users to understand what they will receive from using the website.-->	
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	<!--This codes for the button. The button is labelled Get Started, and clicking it will take the user to the page id one-->
+	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
- 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>  
-	<!--This is a disclaimer so no user uses the code as a medical diagnosis.-->
-
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
 <div class="page" id="one">
-<!--The page is understood by the code as page one (the id is one)-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
-		<!--The title of the page is 'Question 1.' This indicates to users that the page will display the first question of the survey-->
+		<!--This is the title of the second page, first question-->
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Is there a stressor currently affecting you?</p>    
-	<!--This is the first question and only question in the page.-->
-		<a href="#two"  onclick="anxietyAdd();" class="w3-btn w3-black"> No</a> 
-		<!--This is the button users will choose to indicate they don't have a stressor that is affecting them in the present (and has not passed). Choosing this answer will increase the anxiety count by one, and will have no effect on the stress count. The href statement will take the user to page two.-->
-		<a href="#two"  onclick="stressAdd();" class="w3-btn w3-black">Yes</a> 
-		<!--This is the button users will choose to indicate they have a stressor that is affecting them in the present (and has not passed). Choosing this answer will increase the stress count by one, and will have no effect on the anxiety count. The href statement will take the user to page two.-->
-		
+        <p>Are your eyes watery or itchy?</p>   
+	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
     	</div>
+</div>
 
-<div class="page" id="two"> 
-	<!--The page is understood by the code as page two (the id is two)-->
-	
+<div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1> 
-		<!--The title of the page is 'Question 2.' This indicates to users that the page will display the second question of the survey-->
+		<h1>Question 2</h1>
+		<!--This is the title of the third page, second question-->
 	</div>
 	
 	<div id="content" class="w3-container">
-	<p>Is your response proportional to the stressor?</p> 
-		<!--This is the first question and only question in the page.-->
-	<a href="#three"  onclick="stressAdd();" class="w3-btn w3-black"> Yes</a> 
-		<!--This is the button users will choose to indicate their stressor causes a proportionate response. Choosing this answer will increase the stress count by one, and will have no effect on the anxiety count. The href statement will take the user to page three.-->
-	<a href="#three"  onclick="anxietyAdd();" class="w3-btn w3-black"> No</a> 
-		<!--This is the button users will choose to indicate they have a disproportionate response to the stressor. Choosing this answer will increase the anxiety count by one, and will have no effect on the stress count. The href statement will take the user to page three.-->
+	<p>Do you have a fever?</p>
+	<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
+	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
 	</div>
 </div>	
 	
-<div class="page" id="three"> 
-	<!--The page is understood by the code as page three (the id is three)-->
-	
+<div class="page" id="three">
 	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1> 
-		<!--The title of the page is 'Question 3.' This indicates to users that the page will display the third question of the survey-->
+		<h1>Question 3</h1>
+		<!--This is the title of the fourth page, third question-->
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are you reacting to external factors?</p> 
-		<!--This is the first question and only question in the page.-->
-	<a href="#four"  onclick="stressAdd();" class="w3-btn w3-black"> Yes</a> 
-		<!--his is the button users will choose to indicate they are reacting to external, not internal factors. Choosing this answer will increase the stress count by one, and will have no effect on the anxiety count. The href statement will take the user to page four.-->
-	<a href="#four"  onclick="anxietyAdd();" class="w3-btn w3-black"> No</a> 
-		<!--This is the button users will choose to indicate they aren't reacting to external factors. Choosing this answer will increase the anxiety count by one, and will have no effect on the stress count. The href statement will take the user to page four.-->
+        <p>Do you have a sore throat?</p>   
+	<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
+	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
     	</div>
 </div>
 
-<div class="page" id="four"> 
-	<!--The page is understood by the code as page four (the id is four)-->
-	
+<div class="page" id="four">
 	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 4</h1> 
-		<!--The title of the page is 'Question 4.' This indicates to users that the page will display the fourth question of the survey-->
+		<h1>Question 4</h1>
+		<!--This is the title of the fifth page, fourth question-->
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Do your symptoms typically persist after the stressor passes or is resolved?</p> 
-		<!--This is the first question and only question in the page.-->
-	<a href="#five"  onclick="anxietyAdd();" class="w3-btn w3-black"> Yes</a> 
-		<!--This is the button users will choose to indicate their symptoms persist even after the stressor is gone. Choosing this answer will increase the anxiety count by one, and will have no effect on the stress count. The href statement will take the user to page five.-->
-	<a href="#five"  onclick="stressAdd();" class="w3-btn w3-black"> No</a> 
-		<!--This is the button users will choose to indicate their symptoms don't persist after the stressor is gone. Choosing this answer will increase the stress count by one, and will have no effect on the anxiety count. The href statement will take the user to page five.-->
+        <p>Are your symptoms seasonal or chronic?</p>   
+	<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+	<a href="#five"  onclick="coldAdd();" class="w3-btn w3-black"> No</a>
     	</div>
 </div>
-	
-<div class="page" id="five"> 
-	<!--The page is understood by the code as page five (the id is five)-->
-	
+
+<div class="page" id="five">
 	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Results</h1> 
-		<!--The title of the page is 'Results 1.' This indicates to users that the page will display the results of the survey-->
+		<h1>Results</h1>
+		<!--This is the title of the sixth page, the results-->
+		
 	</div>
 	
     	<div id="content" class="w3-container">
-	<a onclick="results();" class="w3-btn w3-black"> Show Me My Results!</a> 
-		<!--This is a button that users will click to indicate that they wish to see their results. Doing so will call the results function, which will display an alert with their stress
- 
-
-and anxiety percentages-->
-    	</div>
-</div>
-
-
+	<p id="results"></p>
+	<p>Ready to see your results?!</p>   
+	<a onclick="results();" class="w3-btn w3-black"> Show Me My Results!</a>
 	
 
 
@@ -206,11 +174,4 @@ and anxiety percentages-->
 </footer>
 
 </body>
-</html>
-
-
-
-
-	   
-   </body>
 </html>
